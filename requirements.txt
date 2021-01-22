@@ -1,0 +1,13 @@
+scipy==1.4.1
+tensorflow-gpu==2.3
+tensorflow-hub
+tensorflow-text==2.3
+tqdm==4.48.2
+transformers==3.0.2
+faiss==1.5.3
+selenium==3.141.0
+sentence-transformers==0.3.4
+lxml==4.5.2
+sentencepiece==0.1.94
+bert-for-tf2==0.14.7
+nltk==3.5
