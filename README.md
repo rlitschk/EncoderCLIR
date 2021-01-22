@@ -1,5 +1,5 @@
 # Evaluating Multilingual Text Encoders for Unsupervised CLIR
-Robert Litschko, Ivan Vulić, Simone Paolo Ponzetto, Goran Glavaš. [Evaluating Multilingual Text Encoders for Unsupervised CLIR](**https://arxiv.org/abs/2101.08370**). arXiv preprint arXiv:2101.08370
+Robert Litschko, Ivan Vulić, Simone Paolo Ponzetto, Goran Glavaš. [Evaluating Multilingual Text Encoders for Unsupervised CLIR](https://arxiv.org/abs/2101.08370). arXiv preprint arXiv:2101.08370
 
 ## Installation instructions
 
@@ -14,27 +14,27 @@ pip install -r requirements.txt
 python -c "import nltk; nltk.download('punkt'); nltk.download('stopwords')"
 ```` 
 
-*(Optional) Install [LASER](**https://github.com/facebookresearch/LASER**) and set the `LASER` environment variable, then set the `LASER_EMB` variable in [`config.py`]((../src/config.py)). You need to manually adjust the sequence length in `LASER_HOME/source/embed.py`.*    
+*(Optional) Install [LASER](https://github.com/facebookresearch/LASER) and set the `LASER` environment variable, then set the `LASER_EMB` variable in [`config.py`]((../src/config.py)). You need to manually adjust the sequence length in `LASER_HOME/source/embed.py`.*    
 
 ## Resources
 
-- We run our experiments on [CLEF](**http://catalog.elra.info/en-us/repository/browse/ELRA-E0008/**) for document-level retrieval and samples of [Europarl](**https://madata.bib.uni-mannheim.de/360/9/europarl.tar.gz**) for sentence-level retrieval. Download and extract the files into `PROJECT_ROOT/data/corpus`.
+- We run our experiments on [CLEF](http://catalog.elra.info/en-us/repository/browse/ELRA-E0008/) for document-level retrieval and samples of [Europarl](https://madata.bib.uni-mannheim.de/360/9/europarl.tar.gz) for sentence-level retrieval. Download and extract the files into `PROJECT_ROOT/data/corpus`.
 - Download the following embeddings and place them into `PROJECT_ROOT/data/embedding_spaces`:
 
  Model | XLM | mBERT  
 --- | --- | --- 
- ISO | [L1](**https://madata.bib.uni-mannheim.de/361/3/xlm_iso_layer_1.tar.gz**) | [L0](**https://madata.bib.uni-mannheim.de/361/1/mbert_iso_layer_0.tar.gz**)
- AOC | [L12](**https://madata.bib.uni-mannheim.de/361/4/xlm_aoc_layer_12.tar.gz**), [L15](**https://madata.bib.uni-mannheim.de/361/5/xlm_aoc_layer_15.tar.gz**) | [L9](**https://madata.bib.uni-mannheim.de/361/2/mbert_aoc_layer_9.tar.gz**)
+ ISO | [L1](https://madata.bib.uni-mannheim.de/361/3/xlm_iso_layer_1.tar.gz) | [L0](https://madata.bib.uni-mannheim.de/361/1/mbert_iso_layer_0.tar.gz)
+ AOC | [L12](https://madata.bib.uni-mannheim.de/361/4/xlm_aoc_layer_12.tar.gz), [L15](https://madata.bib.uni-mannheim.de/361/5/xlm_aoc_layer_15.tar.gz) | [L9](https://madata.bib.uni-mannheim.de/361/2/mbert_aoc_layer_9.tar.gz)
 
 - We further make the following cross-lingual word embedding spaces available:
 
 Type | CLWE Space  
 --- | --- 
-Supervised | [CCA](**https://madata.bib.uni-mannheim.de/360/3/cca.tar.gz**), [proc](**https://madata.bib.uni-mannheim.de/360/2/proc.tar.gz**), [procB](**https://madata.bib.uni-mannheim.de/360/7/procb.tar.gz*), [RCSLS](**https://madata.bib.uni-mannheim.de/360/6/rcsls.tar.gz**)
-Unsupervised | [VecMap](**https://madata.bib.uni-mannheim.de/360/8/vecmap.tar.gz**), [Muse](**https://madata.bib.uni-mannheim.de/360/1/muse.tar.gz**), [ICP](**https://madata.bib.uni-mannheim.de/360/4/icp.tar.gz**)
+Supervised | [CCA](https://madata.bib.uni-mannheim.de/360/3/cca.tar.gz), [proc](https://madata.bib.uni-mannheim.de/360/2/proc.tar.gz), [procB](https://madata.bib.uni-mannheim.de/360/7/procb.tar.gz*), [RCSLS](https://madata.bib.uni-mannheim.de/360/6/rcsls.tar.gz)
+Unsupervised | [VecMap](https://madata.bib.uni-mannheim.de/360/8/vecmap.tar.gz), [Muse](https://madata.bib.uni-mannheim.de/360/1/muse.tar.gz), [ICP](https://madata.bib.uni-mannheim.de/360/4/icp.tar.gz)
 
-- Optional: Download model checkpoints [here](**https://madata.bib.uni-mannheim.de/361/6/checkpoints.tar.gz**) and extract into `PROJECT_ROOT/data/checkpoints`.
-- Optional: Download reference files for significance tests [here](****) and extract into `PROJECT_ROOT/data/ttest-references`.
+- Optional: Download model checkpoints [here](https://madata.bib.uni-mannheim.de/361/6/checkpoints.tar.gz) and extract into `PROJECT_ROOT/data/checkpoints`.
+- Note: Reference files for significance tests (`PROJECT_ROOT/data/ttest-references`) are not available at the moment.
 
 
 ## Example usage
