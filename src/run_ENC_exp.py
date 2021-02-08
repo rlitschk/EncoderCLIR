@@ -324,7 +324,7 @@ if __name__ == "__main__":
   parser.add_argument("--lang_pairs", action='append', nargs="+", choices=all_lps,
                       help="One or more space-separated language pairs, e.g. 'ende defi'. Defaults to all lang. pairs.")
   parser.add_argument("--maxlen", type=int, default=128)
-  # parser.add_argument("--split_documents", action='store_true', help="Turn on individual sentence scoring.")
+  parser.add_argument("--split_documents", action='store_true', help="Turn on individual sentence scoring.")
 
   # model parameters
   user_args = parser.parse_args()
